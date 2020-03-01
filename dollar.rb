@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Dollar
   attr_accessor :amount
   def initialize(amount)
@@ -7,6 +5,6 @@ class Dollar
   end
 
   def times(multiplier)
-    @amount *= multiplier
+    Dollar.new(amount * multiplier)
   end
 end
