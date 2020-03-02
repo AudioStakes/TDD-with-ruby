@@ -7,9 +7,9 @@ class TestMoney < Minitest::Unit::TestCase
   def test_multiplication
     five = Dollar.new 5
     product = five.times(2)
-    assert_equal 10, product.amount
+    assert_equal Dollar.new(10), product
     product = five.times(3)
-    assert_equal 15, product.amount
+    assert_equal Dollar.new(15), product
   end
 
   def test_equality

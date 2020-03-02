@@ -1,5 +1,5 @@
 class Dollar
-  attr_accessor :amount
+  attr_reader :amount
   def initialize(amount)
     @amount = amount
   end
@@ -11,4 +11,6 @@ class Dollar
   def equals(dollar)
     dollar.instance_of?(Dollar) && amount == dollar.amount
   end
+
+  alias == equals
 end
