@@ -5,7 +5,9 @@ class Money
   end
 
   def equals(money)
-    money.is_a?(Money) && amount == money.amount
+    money.is_a?(Money)\
+    && amount == money.amount\
+    && money.class == self.class
   end
   alias == equals
 end
