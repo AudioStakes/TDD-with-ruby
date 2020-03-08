@@ -29,4 +29,9 @@ class TestMoney < Minitest::Unit::TestCase
     product = five.times(3)
     assert_equal Money.franc(15), product
   end
+
+  def test_currency
+    assert_equal "USD", Money.dollar(1).currency()
+    assert_equal "CHF", Money.franc(1).currency()
+  end
 end
