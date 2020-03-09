@@ -8,7 +8,7 @@ class Money
   def equals(money)
     money.is_a?(Money)\
     && amount == money.amount\
-    && money.class == self.class
+    && money.currency == self.currency
   end
   alias == equals
 
@@ -21,6 +21,6 @@ class Money
   end
 
   def times(multiplier)
-    raise 'System Error: method missing'
+    Money.new(amount * multiplier, currency)
   end
 end
