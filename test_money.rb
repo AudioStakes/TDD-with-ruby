@@ -34,4 +34,8 @@ class TestMoney < Minitest::Unit::TestCase
     assert_equal "USD", Money.dollar(1).currency()
     assert_equal "CHF", Money.franc(1).currency()
   end
+
+  def test_different_class_equality
+    assert Money.new(10, "CHF").equals(Franc.new(10, "CHF"))
+  end
 end
