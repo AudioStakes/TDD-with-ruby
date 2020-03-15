@@ -31,4 +31,12 @@ class TestMoney < Minitest::Unit::TestCase
     reduced = bank.reduce(sum, "USD")
     assert_equal Money.dollar(10), reduced
   end
+
+  def test_plus_returns_sum
+    five = Money.dollar(5)
+    result = five.plus(five)
+    sum = result
+    assert_equal five, sum.augend
+    assert_equal five, sum.addend
+  end
 end
